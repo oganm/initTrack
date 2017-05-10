@@ -8,7 +8,7 @@ shinyServer(function(input, output, session) {
     outTable = eventReactive(input$RollInit,{
         data = read.table(text = input$inits,stringsAsFactors = FALSE)
 
-        names(data) = c('name', 'initiative')
+        names(data) = c('name', 'initiative', "AC")
         
         data %<>% mutate(initiative = initiative %>% sapply(roll)) %>% arrange(desc(initiative))
         
@@ -16,7 +16,7 @@ shinyServer(function(input, output, session) {
     })
     
     output$initTable = renderDataTable({
-        datatable(outTable(),selection='single')
-    })
+        datatable(outTable(),selection='multiple')
+        })
     
 })

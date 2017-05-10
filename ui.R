@@ -13,14 +13,14 @@ shinyUI(fluidPage(
     fluidRow(column(6, wellPanel(actionButton('RollInit',label = 'Roll'),
                                  textAreaInput(inputId="inits",label = '', rows= 10,
                                                value = 
-"Chop 2d20k1+4 # advantage on initiative
-Dom 1d20+0
-Pust 1d20+1
-Ajuma 1d20+2
-Marcus 1d20+0
-Sirius 1d20+1
-Jarran 1d20+3
-Baddies 1d20+2"))),
-column(6,
+"Chop 2d20k1+4 16# advantage on initiative
+Dom 1d20+1 14
+Pust 1d20+1 11
+Ajuma 1d20+2 15
+# Marcus 1d20+0 10
+Sigurd 1d20+0 19
+Jarran 2d20k1+2 20
+Baddies 1d20+2 10"))),
+column(6, 
        dataTableOutput('initTable')))
 ))
